@@ -39,19 +39,19 @@ public class controllers {
 	@RequestMapping("/")
 	public String home(){
 		
-		return"index.jsp";
+		return"index";
 	}
 	
 	@RequestMapping("/search")
 	public String two(){
 		
-		return"two.jsp";
+		return"two";
 	}
 	
 	@RequestMapping("/three")
 	public String three(){
 		
-		return"three.jsp";
+		return"three";
 	}
 	
 	@RequestMapping("/queueimp")
@@ -81,13 +81,13 @@ public class controllers {
 		sess.setAttribute("uname", std.getName());
 		stdao.addstudednt(std);
 		
-		return "redirect:/welcome.jsp";
+		return "redirect:/welcome";
 	}
 	
 	@RequestMapping("/getstudentdata")
 	public ModelAndView getusers(){
 		
-		ModelAndView mv = new ModelAndView("three.jsp");
+		ModelAndView mv = new ModelAndView("three");
 		
 		mv.addObject("studednts", stdao.getstudednts());
 		
@@ -102,7 +102,7 @@ public class controllers {
 		logr.info("student id is :"+ id);
 		
 		
-		ModelAndView mv = new ModelAndView("view.jsp");
+		ModelAndView mv = new ModelAndView("view");
 		
 		if(stdao.getstudednt(id).isEmpty()) throw new ResourceNotFoundException();
 		
@@ -123,7 +123,7 @@ public class controllers {
 		
 		logr.info("student id is :"+ id);
 		
-		ModelAndView mv = new ModelAndView("view.jsp");
+		ModelAndView mv = new ModelAndView("view");
 		
 		stdao.updatestudent(std, id);
 		
@@ -146,27 +146,19 @@ public class controllers {
 		System.out.println("Exception message: "+ex.getCause());
 		logr.info("Exception is : "+ex);
 		
-		return "error.jsp";
+		return "error";
 	}
 	
 	@ExceptionHandler(value=SQLException.class)
 	public String SqlException(SQLException ex){
 		logr.info("Exception is : "+ex);
 		
-		return "sqlException.jsp";
-	}
-	
-	@ExceptionHandler(MissingServletRequestParameterException.class)
-	public String handleMissingParams(MissingServletRequestParameterException ex) {
-	    String name = ex.getParameterName();
-	    logr.info(name + " parameter is missing");
-	    
-	    return "index.jsp";	    
+		return "sqlException";
 	}
 
     @ExceptionHandler(ResourceNotFoundException.class)
 	public String notfound(){
 				
-		return "404_page.jsp";
+		return "404_page";
 	}
 }
