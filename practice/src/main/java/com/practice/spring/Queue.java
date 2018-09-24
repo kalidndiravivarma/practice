@@ -2,12 +2,12 @@ package com.practice.spring;
 
 public class Queue {
 	
-	String queue[] = new String[5];
+	int queue[] = new int[5];
 	int size;
 	int front;
 	int rear;
 
-	public void enQueue(String data){
+	public void enQueue(int data){
 		
 		if(!isFull()){
 			queue[rear] = data;
@@ -20,7 +20,7 @@ public class Queue {
 	}
 	
 	public void deQueue(){
-		String data = queue[front];
+		int data = queue[front];
 		
 		if(!isEmpty()){
 			front = (front+1)%5;
@@ -41,7 +41,7 @@ public class Queue {
 		
 		System.out.println();
 		
-		for(String n : queue){
+		for(int n : queue){
 			System.out.print(n+ " " );
 		}
 	}

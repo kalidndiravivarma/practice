@@ -60,15 +60,15 @@ public class controllers {
 		ArrayList<student> stds = stdao.getstudednts();
 		
 		Queue que = new Queue();
-		
-		for(int i=0; i<=stds.size(); i++){
-			que.enQueue(stds.get(i).getName());
-		}
+		que.enQueue(56);
+		que.enQueue(35);
+		que.enQueue(68);
+		que.enQueue(75);
 		
 		que.deQueue();
 		
-		que.enQueue("Madan");
-		que.enQueue("Porvi");
+		que.enQueue(5);
+		que.enQueue(7);
 		
 		que.show();
 		
