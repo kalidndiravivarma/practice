@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+.text-center{
+    justify-content:center;
+}
+.form-group p{
+	float: left;
+}
+
+th{
+    border: 1px solid gray;
+    width: 90px;
+    background-color: #d9d9d9;
+    text-align: center;
+}
+
+td{
+	border: 1px solid gray;
+    text-align: center;
+    text-align: center;
+}
+
+#id{
+	background-color: red;
+}
